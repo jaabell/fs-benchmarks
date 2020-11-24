@@ -12,8 +12,8 @@ s = random.randint(1, 100)
 
 matrix = np.random.rand(s, s)
 
-comm.send(matrix, dest=(rank+1)%size)
-data = comm.recv(source=(rank-1)%size)
+comm.send(matrix, dest=(rank + 1) % size)
+data = comm.recv(source=(rank - 1) % size)
 print(f"my rank is {rank} and recieve a matrix of shape{data.shape}")
 
 '''if rank == 0:
